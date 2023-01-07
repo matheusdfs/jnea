@@ -1,27 +1,26 @@
 package entities;
 
+import java.awt.Color;
+
 import inputs.KeyboardInputsHandler;
 
-public class Player {
+public class Player extends Creature {
     // Attributes
-    private int speed = 5;
+    Color color = new Color(0, 255, 0);
 
     // Variables
-    private int positionX;
-    private int positionY;
+    protected boolean isThePlayerWantingToWalk = false;
 
-    private boolean isThePlayerWantingToWalk = false;
-
-    // Classes
+    // Others
     KeyboardInputsHandler keyboardHandler;
 
     public Player(KeyboardInputsHandler keyboardH) {
-        positionX = 0;
-        positionY = 0;
+        speed = 2;
 
         keyboardHandler = keyboardH;
     }
 
+    @Override
     public void update() {
         resetFlags();
         movePlayer();
