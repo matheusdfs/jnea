@@ -5,21 +5,32 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-import inputs.KeyboardInputs;
+import entities.Player;
+import inputs.KeyboardInputsHandler;
 
 public class GamePanel extends JPanel{
-    public GamePanel() {
+    // TODO: List of entities
+    KeyboardInputsHandler keyboardHandler = new KeyboardInputsHandler();
 
-        addKeyListener(new KeyboardInputs());
+    Player player = new Player(keyboardHandler);
+
+    public GamePanel() {
+        addKeyListener(keyboardHandler);
+        setFocusable(true);
+    }
+
+    public void update() {
+
+        player.update();
+
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        g.setColor(Color.red);
-        g.fillRect(300, 300, 300, 200);
-
         g.setColor(Color.green);
-        g.fillRect(150, 150, 300, 200);
+        g.fillRect(player.getPositionX(), player.getPositionY(), 25, 25);
+
+        g.dispose();
     }
 }
