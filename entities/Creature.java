@@ -1,5 +1,7 @@
 package entities;
 
+import java.awt.Graphics;
+
 public class Creature extends Entity {
     // Attributes
     protected int speed = 0;
@@ -9,7 +11,7 @@ public class Creature extends Entity {
     }
 
     @Override
-    public void update() {
+    public void update(Graphics g) {
 
     }
 }
