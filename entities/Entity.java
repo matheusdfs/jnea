@@ -5,23 +5,13 @@ import java.awt.Graphics;
 
 public class Entity {
     // Variables
-    protected int positionX;
-    protected int positionY;
+    protected int positionX = 0;
+    protected int positionY = 0;
 
-    protected Color color = Color.gray;
-
-    public Entity() {
-        positionX = 0;
-        positionY = 0;
-    }
-
-    public Entity(int initialPosX, int initialPosY) {
-        positionX = initialPosX;
-        positionY = initialPosY;
-    }
+    protected Color color = Color.blue;
 
     public void update(Graphics g) {
-
+        display(g);
     }
 
     public void display(Graphics g) {
