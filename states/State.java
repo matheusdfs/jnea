@@ -12,13 +12,8 @@ public class State {
     protected List<Entity> entities = new ArrayList<Entity>();
 
     public void update(Graphics g) {
-        System.out.println("update State");
         for (Entity entity : entities) {
             entity.update(g);
         }
-    }
-
-    public List<Entity> getEntities() {
-        return entities;
     }
 }

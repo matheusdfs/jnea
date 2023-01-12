@@ -32,6 +32,9 @@ public class Player extends Creature {
     }
 
     private void movePlayer() {
+        // TODO: Correct the implementation of movement, because the player
+        // is more faster going up than down, i think is because of the
+        // rounding when turning the variables to integers
         double angleMovement = getKeyboardAngleMovement();
 
         if (isThePlayerWantingToWalk) {

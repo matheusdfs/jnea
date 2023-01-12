@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 import states.State;
-import entities.Entity;
 import inputs.KeyboardInputsHandler;
 
 public class GamePanel extends JPanel{
@@ -29,15 +28,7 @@ public class GamePanel extends JPanel{
         super.paintComponent(g);
 
         if (currentState != null){
-            var entities = currentState.getEntities();
-
-            // get list of entities
-            for (Entity entity : entities) {
-                entity.update(g);
-            }
-
-            // display entities
-
+            currentState.update(g);
         }
     
         g.dispose();
